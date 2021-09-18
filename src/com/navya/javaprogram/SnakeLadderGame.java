@@ -6,12 +6,15 @@ package com.navya.javaprogram;
  *3> Check option they are no play, Ladder or Snake .
  *4> Repeat till the Player reaches the winning position 100.
  *5> Ensure the player gets to exact winning position 100.
+ *6> Report the number of times the dice was played to win 
+ *   the game and also the position after every die role.
  */
 
 public class SnakeLadderGame
 {
 	//Class level variables
 	static int total=0;
+	static int count=0;
 
 	//use method to roll die
 
@@ -23,8 +26,9 @@ public class SnakeLadderGame
 		
 		System.out.println("Die = "+dieNumber);
 		
+		count=count+1; // count how many times the die was played
 		
-		if (total <= 100) 
+		if (total + dieNumber <= 100) 
 		{
 			total=total+dieNumber; //check player position after every die
 			
@@ -73,11 +77,16 @@ public class SnakeLadderGame
 				    break;
 			case 90:
 				    System.out.println("Ladder");
-				    total=total-10;
+				    total=total+10;
 				    System.out.println("After Ladder = "+total);
+				    System.out.println("Player in the position = "+total);
+				    System.out.println("Exit");
+				    System.out.println(count+" times the dice was played to win the game ");
 				    break;
 			case 100:
+				     System.out.println("After Ladder = "+total);
 				     System.out.println("Exit"); // After reach 100 exit game.
+				     System.out.println(count+" times the dice was played to win the game ");
 				     break;	    	    
 			}
 		}
@@ -109,9 +118,9 @@ public class SnakeLadderGame
 	
   public static void main(String[] args)
  {
-    int position=0;
+    
     int player = 1;
-    System.out.println("Player in the Position = " +position);
+
     
     while (total < 100)
     {
