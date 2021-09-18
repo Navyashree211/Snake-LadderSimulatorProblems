@@ -5,14 +5,13 @@ package com.navya.javaprogram;
  *2> The player roll the die and get the number between 1 to 6 .
  *3> Check option they are no play, Ladder or Snake .
  *4> Repeat till the Player reaches the winning position 100.
+ *5> Ensure the player gets to exact winning position 100.
  */
 
 public class SnakeLadderGame
 {
 	//Class level variables
 	static int total=0;
-	static int cal=0;
-	static int count=0;
 
 	//use method to roll die
 
